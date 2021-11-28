@@ -1,5 +1,2 @@
-/node_modules
-*.log
-*.lock
-api.js
-package-lock.json
+node_modules/
+.package-lock.json
