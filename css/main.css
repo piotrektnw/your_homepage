@@ -16,6 +16,10 @@ body {
   font-family: 'Montserrat', serif;
 }
 
+main {
+  height: 100vh;
+}
+
 .background {
   width: 100%;
   height: 100vh;
@@ -45,9 +49,11 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   width: 100%;
 }
 
@@ -79,11 +85,16 @@ body {
   cursor: pointer;
 }
 
-.background .menu .block__item--1 .dropdown, .background .menu .block__item > ul > li--1 .dropdown {
+.background .menu .block__item--2, .background .menu .block__item > ul > li--2 {
+  width: 70%;
+  background: none;
+}
+
+.background .menu .block__item--3 .dropdown, .background .menu .block__item > ul > li--3 .dropdown {
   position: relative;
 }
 
-.background .menu .block__item--1 .dropdown li, .background .menu .block__item > ul > li--1 .dropdown li {
+.background .menu .block__item--3 .dropdown li, .background .menu .block__item > ul > li--3 .dropdown li {
   display: none;
   margin: 0;
   height: 25px;
@@ -92,15 +103,15 @@ body {
   transition: color .3s, background-color .3s;
 }
 
-.background .menu .block__item--1 .dropdown li input, .background .menu .block__item > ul > li--1 .dropdown li input {
+.background .menu .block__item--3 .dropdown li input, .background .menu .block__item > ul > li--3 .dropdown li input {
   margin: 5px;
 }
 
-.background .menu .block__item--1 .dropdown li:hover, .background .menu .block__item > ul > li--1 .dropdown li:hover {
+.background .menu .block__item--3 .dropdown li:hover, .background .menu .block__item > ul > li--3 .dropdown li:hover {
   background-color: rgba(30, 30, 30, 0.8);
 }
 
-.background .menu .block__item--1:hover .dropdown li, .background .menu .block__item > ul > li--1:hover .dropdown li {
+.background .menu .block__item--3:hover .dropdown li, .background .menu .block__item > ul > li--3:hover .dropdown li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,6 +125,44 @@ body {
   overflow: hidden;
   -webkit-animation: dropdown-anim .5s forwards;
           animation: dropdown-anim .5s forwards;
+}
+
+.background .menu .block__item--5, .background .menu .block__item > ul > li--5 {
+  width: 30%;
+  min-height: 85px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.background .menu .block__item--5 p, .background .menu .block__item > ul > li--5 p {
+  padding: 20px;
+  height: 5%;
+}
+
+.background .menu .block__item--5 input, .background .menu .block__item > ul > li--5 input {
+  margin-bottom: 10px;
+}
+
+.background .menu .block__item--5 ul, .background .menu .block__item > ul > li--5 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.background .menu .block__item--5 ul li, .background .menu .block__item > ul > li--5 ul li {
+  width: 80%;
+  margin: 2px 0;
+  height: 20px;
+  border: 1px #c8c8c8 solid;
+}
+
+.background .menu .block__item--5 ul li:hover, .background .menu .block__item > ul > li--5 ul li:hover {
+  background-color: rgba(120, 120, 120, 0.8);
 }
 
 .background .menu .block__item .dropdown li:nth-child(2), .background .menu .block__item > ul > li .dropdown li:nth-child(2) {
@@ -153,6 +202,10 @@ body {
 
 .background .menu .block__item:hover {
   background-color: rgba(30, 30, 30, 0.8);
+}
+
+.background .menu .block__item--2:hover {
+  background: none;
 }
 
 .background .menu .set-background {

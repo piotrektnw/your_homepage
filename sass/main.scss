@@ -15,6 +15,10 @@ body {
     font-family: 'Montserrat', serif;
 }
 
+main {
+    height: 100vh;
+}
+
 .background {
     width: 100%;
     height: 100vh;
@@ -35,7 +39,8 @@ body {
         position: absolute;
         top: 3%;
         display: flex;
-        justify-content: end;
+        flex-wrap: wrap;
+        justify-content: start;
         width: 100%;
        
         .block {
@@ -60,7 +65,14 @@ body {
                     cursor: pointer;
                 }
 
-            &--1 {
+            &--2 {
+                width: 70%;
+                background: none;
+            }
+
+            
+
+            &--3 {
                 .dropdown {
                    position: relative;
                 }
@@ -80,9 +92,10 @@ body {
                 .dropdown li:hover {
                     background-color: rgba(30, 30, 30, 0.8);
                 }
+           
             }
             
-            &--1:hover {
+            &--3:hover {
 
                 .dropdown li {
                     display: flex;
@@ -92,6 +105,42 @@ body {
                     overflow: hidden;
                     animation: dropdown-anim .5s forwards;
                 } 
+            }
+
+            &--5 {
+                
+                    width: 30%;
+                    min-height: 85px;
+                    max-height: 500px;
+                    //    you can set overflow scroll and then let user 
+                    //    scroll all tasks
+                    overflow: hidden;
+                    
+                    p {
+                        padding: 20px;
+                        height: 5%;
+                    }    
+
+                    input {
+                        margin-bottom: 10px;
+                    }
+                    ul {
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    
+                    li {
+                        
+                        width: 80%;
+                        margin: 2px 0;
+                        height: 20px;
+                        border: 1px rgb(200, 200, 200) solid;
+                    }
+
+                    li:hover {
+                        background-color: rgba(120, 120, 120, 0.8);
+                    }
+                }
             }
 
             .dropdown li:nth-child(2) {
@@ -120,6 +169,10 @@ body {
         &__item:hover {
             background-color: rgba(30, 30, 30, 0.8);
         }
+
+        &__item--2:hover {
+            background: none;
+        }
     }
 
         .set-background {
@@ -141,9 +194,6 @@ body {
                 transform: rotate(360deg);
             }
         }
-
-
-       
 }
 
     .say-hi {
@@ -153,8 +203,9 @@ body {
         background-color: blue;
     }
 
-
 }
+
+
 
 //  Animations
 
