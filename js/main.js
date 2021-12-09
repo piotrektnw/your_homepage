@@ -2,21 +2,32 @@ import { API_KEY } from "./api.js";
 
 
 const websiteBackground = document.querySelector('.background');
-const setBgBtn  = document.querySelector('.set-background');
+const setBgBtn = document.querySelector('.set-background');
+const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked')
 
-let categories = ['nature', 'industry', 'sports', 'buildings', 'business', 'food', 'fashion', 'science', 'backgrounds', 'people']
+
+
+const chooseCategory = () => {
+    checkboxes.forEach((checkbox) => {
+        console.log(checkbox.checked);
+    })
+}
 
 const setBackground = () => {
 
+    let checked = document.querySelectorAll('input[type="checkbox"]:checked')
+    
     let background;
+    let categoryNo;
     let number = Math.floor(Math.random() * 19)
-    let categoryNo = Math.floor(Math.random() * categories.length - 1)
-    console.log(categoryNo);
-    console.log(number);
+    checked.length > 0 ? categoryNo = Math.floor(Math.random() * (checked.length)) : categoryNo = Math.floor(Math.random() * (checked.length-1))
+
+    // Check category name
+    console.log(checked[categoryNo].name);
 
     axios({
         method: 'get',
-        url: `https://pixabay.com/api/?key=${API_KEY}&category=${categories[categoryNo]}&image_type=photo&safesearch=true`
+        url: `https://pixabay.com/api/?key=${API_KEY}&category=${checked[categoryNo].name}&image_type=photo&safesearch=true`
     })
         .then((response) => {
             background = response.data.hits[number].largeImageURL
@@ -26,5 +37,6 @@ const setBackground = () => {
 
 setBgBtn.addEventListener('click', setBackground)
 
-// Prepare background auto-change
-// window.setInterval(setBackground, 50000)
+// Background auto-change
+window.setInterval(setBackground, 50000)
+window.addEventListener('DOMContentLoaded', chooseCategory)

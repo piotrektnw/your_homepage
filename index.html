@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6489b00fcf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/main.css">
     <title>Document</title>
 </head>
@@ -16,8 +17,54 @@
     <section class="background">
         <div class="say-hi"></div>
         <!-- add filter categories -->
-        <button class="set-background">Click me</button>
+        <ul class="menu block">
+            <li class="block__item block__item--1">
+                <p>Background</p>
+                <ul class="dropdown">
+                    <li>
+                        <input type="checkbox" name="nature">
+                        <label for="nature">Nature</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="industry">
+                        <label for="industry">Industry</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="sports">
+                        <label for="sports">Sports</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="people">
+                        <label for="people">People</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="business">
+                        <label for="business">Business</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="fashion">
+                        <label for="fashion">Fashion</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="science">
+                        <label for="science">Science</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="food">
+                        <label for="food">Food</label>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="block__item block__item--2">
+                <p><button class="set-background"><i class="fas fa-sync-alt"></i></button></p>
+            </li>
+        </ul>
+
+
     </section>
+
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="./js/main.js"></script>
